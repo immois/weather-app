@@ -1,7 +1,9 @@
+import { Search } from "@/components/search/search";
+
 export default function Home() {
   return (
     <>
-      <p>Home</p>
+      <Search />
     </>
   );
 }
