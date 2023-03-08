@@ -3,6 +3,7 @@ import { WeatherIconProps } from "@/types/weather";
 import { getSizeIcons } from "@/utils/getSizeIcons";
 import Image from "next/image";
 import styles from "./weather-icon.module.css";
+import cs from "classnames";
 
 export const WeatherIcon = ({
   icon,
@@ -21,7 +22,16 @@ export const WeatherIcon = ({
         height={sizeImg}
         priority
       />
-      {!hideDescription && <p>{description}</p>}
+      {!hideDescription && (
+        <p
+          className={cs({
+            [styles.xl]: size === "xl",
+            [styles.sm]: size === "sm",
+          })}
+        >
+          {description}
+        </p>
+      )}
     </div>
   );
 };

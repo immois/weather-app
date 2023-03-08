@@ -5,8 +5,17 @@
 }
 
 .container p {
-  margin-top: var(--spacing-lg);
   text-align: center;
+}
+
+.xl {
+  margin-top: var(--spacing-lg);
   font-size: 1.8rem;
   color: var(--color-yellow);
+}
+
+.sm {
+  color: gray;
+  margin-top: calc(var(--spacing-sm) / 2);
+  font-size: 1.4rem;
 }
