@@ -1,0 +1,31 @@
+.listCard {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  box-sizing: border-box;
+  margin-top: var(--spacing-lg);
+}
+
+.card {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  background-color: rgba(255, 255, 255, 0.06);
+  box-sizing: border-box;
+  border-radius: 20px;
+  padding: var(--spacing-md) var(--spacing-sm);
+  justify-items: baseline;
+  align-items: center;
+}
+
+.listCard h2 {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.card h3 {
+  font-size: 1.6rem;
+  margin: 0;
+  text-transform: capitalize;
+}
