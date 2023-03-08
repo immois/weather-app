@@ -1,0 +1,12 @@
+.container {
+  display: grid;
+  place-content: center;
+  margin-top: var(--spacing-sm);
+}
+
+.container p {
+  margin-top: var(--spacing-lg);
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--color-yellow);
+}
