@@ -1,0 +1,36 @@
+.search {
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+}
+
+.search input {
+  width: 100%;
+  background-color: transparent;
+  border: 0;
+  padding: var(--spacing-sm);
+  outline: none;
+  font-size: 1.7rem;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.containerActive {
+  padding: calc(var(--spacing-sm) / 2);
+  background-color: #eee;
+  min-height: 60vh;
+  border-radius: 12px;
+}
+
+.searchFocus input {
+  background-color: rgba(0, 0, 255, 0.05);
+  border-radius: 12px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.listWrapper {
+  max-height: 87vh;
+  overflow: auto;
+}
