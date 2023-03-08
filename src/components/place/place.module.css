@@ -1,0 +1,15 @@
+.place {
+  text-align: center;
+  text-shadow: 3px 0px 9px #1c1c1c;
+  padding-bottom: var(--spacing-md);
+}
+
+.city {
+  font-size: 40px;
+  margin: var(--spacing-xs) 0 var(--spacing-sm);
+}
+
+.country {
+  font-size: 17px;
+  margin: 0;
+}
