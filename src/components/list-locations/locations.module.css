@@ -1,0 +1,13 @@
+.card {
+  display: block;
+  padding: var(--spacing-sm);
+  font-size: 1.8rem;
+  color: #777;
+}
+
+.card:focus-within {
+  background-color: #cddbf8;
+  outline: none;
+  border-radius: 12px;
+  color: #333;
+}
