@@ -6,7 +6,9 @@ export const getPlaces = (slug: string) => {
 
   return fetch(API)
     .then((res) => res.json())
-    .then((data: PlaceProps[]) => data)
+    .then((data: PlaceProps[]) => {
+      return data.filter((place) => place.result_type === "city");
+    })
     .catch((err) => {
       throw new Error("Fallo la petición a Reservamos" + err?.message);
     });
