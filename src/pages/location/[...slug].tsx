@@ -46,11 +46,7 @@ const PlacePage = ({ data, city }: PlacePageProps) => {
         description={data[0].weather[0].description}
         size="xl"
       />
-      <Temperature
-        tMax={data[0].temp.max}
-        tMin={data[0].temp.min}
-        humidity={data[0].humidity}
-      />
+      <Temperature tMax={data[0].temp.max} tMin={data[0].temp.min} />
       <DetailsWeather
         humidity={data[0].humidity}
         wind_gust={data[0].wind_gust}
