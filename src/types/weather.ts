@@ -25,8 +25,10 @@ export interface WeatherDailyData {
     max: number;
     min: number;
   };
-  wind_speed: string;
+  wind_gust: number;
   humidity: number;
+  pressure?: number;
+  uvi?: number;
   weather: Weather[];
   sunrise: number;
   sunset: number;
