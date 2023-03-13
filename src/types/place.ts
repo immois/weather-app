@@ -5,4 +5,6 @@ export interface PlaceProps {
   lat: string;
   long: string;
   state: string;
+  result_type: string;
+  humidity: number;
 }

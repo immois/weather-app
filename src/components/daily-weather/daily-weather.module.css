@@ -29,3 +29,7 @@
   margin: 0;
   text-transform: capitalize;
 }
+
+.moreHumidity {
+  border: 1px solid red;
+}

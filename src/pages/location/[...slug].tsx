@@ -30,6 +30,12 @@ interface PlacePageProps {
 }
 
 const PlacePage = ({ data, city }: PlacePageProps) => {
+  const dataHumidity = data.map((hum) => hum.humidity);
+  const mayorHumidity = dataHumidity.sort((a, b) => b - a);
+  const moreHumidity = data.findIndex(
+    (hum) => hum.humidity === mayorHumidity[0]
+  );
+
   return (
     <div>
       <Back />
@@ -39,8 +45,12 @@ const PlacePage = ({ data, city }: PlacePageProps) => {
         description={data[0].weather[0].description}
         size="xl"
       />
-      <Temperature tMax={data[0].temp.max} tMin={data[0].temp.min} />
-      <DailyWeather hourly={data} />
+      <Temperature
+        tMax={data[0].temp.max}
+        tMin={data[0].temp.min}
+        humidity={data[0].humidity}
+      />
+      <DailyWeather hourly={data} moreHumidity={moreHumidity} />
     </div>
   );
 };
