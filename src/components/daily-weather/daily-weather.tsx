@@ -6,26 +6,35 @@ import { Temperature } from "../temperature";
 import cs from "classnames";
 
 interface HourlyWeather {
-  hourly: WeatherDailyData[];
-  moreHumidity: number;
+  daily: WeatherDailyData[];
 }
 
-export const DailyWeather = ({ hourly, moreHumidity }: HourlyWeather) => {
+export const DailyWeather = ({ daily }: HourlyWeather) => {
+  const higherHumidity = daily.map((day) => day.humidity).sort((a, b) => b - a);
+  const indexHigherHumidity = daily.findIndex(
+    (hum) => hum.humidity === higherHumidity[0]
+  );
+
   return (
     <div className={styles.listCard}>
       <h2>Pronostico para 7 días</h2>
-      {hourly.length > 0 &&
-        hourly.map((hour, index) => {
+      {daily.length > 0 &&
+        daily.map((hour, index) => {
+          const dayHigherHumidity = indexHigherHumidity === index;
+
           if (index === 0) {
             return null;
           }
           return (
             <div
               className={cs(styles.card, {
-                [styles.moreHumidity]: moreHumidity === index,
+                [styles.moreHumidity]: dayHigherHumidity,
               })}
               key={index}
             >
+              {dayHigherHumidity && (
+                <p className={styles.higherHumidity}>Dia con mayor humedad</p>
+              )}
               <div>
                 <h3>{formatDay(hour.dt)}</h3>
                 <Temperature tMax={hour.temp.max} tMin={hour.temp.min} />

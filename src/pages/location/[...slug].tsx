@@ -1,5 +1,6 @@
 import { Back } from "@/components/back";
 import { DailyWeather } from "@/components/daily-weather";
+import { DetailsWeather } from "@/components/details-weather";
 import { Place } from "@/components/place";
 import { Temperature } from "@/components/temperature/temperature";
 import { WeatherIcon } from "@/components/weather-icon";
@@ -45,12 +46,14 @@ const PlacePage = ({ data, city }: PlacePageProps) => {
         description={data[0].weather[0].description}
         size="xl"
       />
-      <Temperature
-        tMax={data[0].temp.max}
-        tMin={data[0].temp.min}
+      <Temperature tMax={data[0].temp.max} tMin={data[0].temp.min} />
+      <DetailsWeather
         humidity={data[0].humidity}
+        wind_gust={data[0].wind_gust}
+        pressure={data[0].pressure}
+        uvi={data[0].uvi}
       />
-      <DailyWeather hourly={data} moreHumidity={moreHumidity} />
+      <DailyWeather daily={data} />
     </div>
   );
 };

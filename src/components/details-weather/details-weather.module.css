@@ -1,0 +1,29 @@
+.details {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 1rem;
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-sm) 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card img {
+  margin-bottom: 12px;
+}
+
+.card span {
+  display: block;
+  font-size: clamp(1.4rem, 1.6vw, 1.6rem);
+}
+
+.card span:last-child {
+  margin-top: 6px;
+  font-size: 1.2rem;
+  font-size: clamp(1.25rem, 1.4vw, 1.4rem);
+  color: #cacaca;
+}
